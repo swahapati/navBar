@@ -1,38 +1,43 @@
 body {
-   background-color: rgb(20,20,20);
+   background-color: rgb(20, 20, 20);
    margin: 40px;
    overflow: hidden;
 }
+
 #menu {
    height: 100vh;
    display: flex;
    align-items: center;
 }
+
 .menu-item {
    color: white;
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    font-size: 4vw;
    display: block;
    text-decoration: none;
-   padding: clamp(0.25em,0.5vw,8rem);
+   padding: clamp(0.25em, 0.5vw, 8rem);
 }
+
 #menu-items {
-   padding: clamp(4rem,20vw,48rem);
+   padding: clamp(4rem, 20vw, 48rem);
    position: relative;
    z-index: 2;
 }
-#menu-items:hover > .menu-item {
+
+#menu-items:hover>.menu-item {
    opacity: 0.3;
 }
-#menu-items > .menu-item:hover {
+
+#menu-items>.menu-item:hover {
    opacity: 1;
 }
+
 #menu-bg-image {
    height: 100vh;
    width: 100vw;
-   background-image: radial-gradient(
-      rgba(2255,225,225,0.1) 9%,
-      transparent 9%);
+   background-image: radial-gradient(rgba(2255, 225, 225, 0.1) 9%,
+         transparent 9%);
    background-position: 0% 0%;
 
    background-size: 12vmin 12vmin;
@@ -40,24 +45,29 @@ body {
    left: 0;
    z-index: 1;
    transition: opacity 800ms ease,
-      background-size 800ms ease;
+      background-size 800ms ease,
+      background-position 800ms ease;
 
 }
 
-#menu-items:hover~#menu-background-pattern {
+#menu-items:hover~#menu-bg-image {
    background-size: 11vmin 11vmin;
    opacity: 0.5;
 }
 
-#menu[data-active-index="0"]> menu-background-pattern {
-   background-position: 0%-25%;
+
+#menu[data-active-index="0"]>#menu-bg-image {
+   background-position: 0% -25%;
 }
-#menu[data-active-index="1"]> menu-background-pattern {
-   background-position: 0%-50%;
+
+#menu[data-active-index="1"]>#menu-bg-image {
+   background-position: 0% -50%;
 }
-#menu[data-active-index="2"]> menu-background-pattern {
-   background-position: 0%-75%;
+
+#menu[data-active-index="2"]>#menu-bg-image {
+   background-position: 0% -75%;
 }
-#menu[data-active-index="3"]> menu-background-pattern {
-   background-position: 0%-25%;
+
+#menu[data-active-index="3"]>#menu-bg-image {
+   background-position: 0% -100%;
 }
